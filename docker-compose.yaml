@@ -1,0 +1,12 @@
+version: "3.9"
+services:
+  puppet:
+    image: humblesteamlink:latest
+    container_name: humble
+    environment:
+      TZ: "America/New_York"
+    network_mode: container:vpn
+    volumes:
+      - ./src/:/usr/src/app/src/
+      - ./resources/:/usr/src/app/resources/
+    command: tail -F anything 
